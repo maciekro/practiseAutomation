@@ -1,3 +1,7 @@
+/// <reference types="cypress" />
+
+import { selectPage } from '../support/page-object/selectPage'
+
 describe('Akcja wybrania opcji selekt', () => {
 	it('Wybieranie opcji', () => {
 		cy.visit('/index.php?id_category=3&controller=category#/')
@@ -14,7 +18,6 @@ describe('Akcja wybrania opcji selekt', () => {
 
 	it.only('Wybieranie wszystkich opcji', () => {
 		cy.visit('/index.php?id_category=3&controller=category#/')
-
 		cy.get('#selectProductSort').then((select) => {
 			cy.wrap(select)
 				.find('option')
